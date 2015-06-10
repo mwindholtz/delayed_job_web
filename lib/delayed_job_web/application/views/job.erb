@@ -39,13 +39,13 @@
     <% if job.run_at %>
       <dt>Run At</dt>
       <dd class="time">
-        <%=h job.run_at.rfc822.in_time_zone("Mountain Time (US & Canada)") %>
+        <%=h job.run_at.in_time_zone("Mountain Time (US & Canada)").to_s %>
       </dd>
     <% end %>
     <% if job.locked_at %>
       <dt>Locked At</dt>
       <dd class="time">
-        <%=h job.locked_at.rfc822.in_time_zone("Mountain Time (US & Canada)") %>
+        <%=h job.locked_at.in_time_zone("Mountain Time (US & Canada)").to_s %>
       </dd>
     <% end %>
     <% if job.locked_by %>
@@ -57,7 +57,7 @@
     <% if job.failed_at %>
       <dt>Failed At</dt>
       <dd>
-        <%=h job.failed_at %>
+        <%=h job.failed_at.in_time_zone("Mountain Time (US & Canada)") %>
       </dd>
     <% end %>
   </dl>
