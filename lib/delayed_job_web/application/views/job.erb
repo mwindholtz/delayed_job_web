@@ -38,14 +38,18 @@
     <% end %>
     <% if job.run_at %>
       <dt>Run At</dt>
-      <dd class="time">
+      <dd>
         <%=h job.run_at.in_time_zone("Mountain Time (US & Canada)").to_s %>
+      </dd>
+      <dt>Run At</dt>
+      <dd class="time">
+        <%=h job.run_at.rfc822 %>
       </dd>
     <% end %>
     <% if job.locked_at %>
       <dt>Locked At</dt>
       <dd class="time">
-        <%=h job.locked_at.in_time_zone("Mountain Time (US & Canada)").to_s %>
+        <%=h job.locked_at.rfc822 %>
       </dd>
     <% end %>
     <% if job.locked_by %>
